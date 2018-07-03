@@ -19,6 +19,6 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load_view('pages/cianjur');
+		$this->load_view('pages/gis');
 	}
 }

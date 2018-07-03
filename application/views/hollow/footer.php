@@ -1,10 +1,10 @@
-<!-- <footer class="main-footer">
+<footer class="main-footer">
   <div class="pull-right hidden-xs">
     <b>Version</b> 1.0.0
   </div>
-  <strong>Copyright &copy; 2018 <a href="https://adminlte.io">Cianjur</a>.</strong> All rights
+  <strong>Copyright &copy; 2018 <a href="#">Cianjur</a>.</strong> All rights
   reserved.
-</footer> -->
+</footer>
 
 
 <!-- /.control-sidebar -->
@@ -15,6 +15,7 @@
 <!-- ./wrapper -->
 <script>
   let baseurl = "<?=base_url()?>";
+  let uri = '<?=$this->uri->segment(2)?>';
 </script>
 <!-- jQuery 3 -->
 <script src="<?=base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
@@ -34,6 +35,9 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="bower_components/morris.js/morris.min.js"></script> -->
 <!-- Sparkline -->
 <script src="<?=base_url()?>assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- DataTables -->
+<script src="<?=base_url()?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?=base_url()?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- jvectormap -->
 <!-- <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
@@ -56,6 +60,15 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- <script src="dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url()?>assets/js/demo.js"></script>
-<script src="<?=base_url()?>assets/js/custom.js"></script>
+<script src="<?=base_url()?>assets/js/hollow.js"></script>
+<script>
+  $(function () {
+    $('#tbl-data').DataTable({
+      'dom' : "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+              "<'row'<'col-sm-12'tr>>" +
+              "<'row'<'col-sm-5'i><'col-sm-7'<'pull-right'p>>>",
+    });
+  });
+</script>
 </body>
 </html>

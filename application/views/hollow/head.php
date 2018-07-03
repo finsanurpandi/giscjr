@@ -44,9 +44,5 @@
         /* height: 680px; */
        }
 
-       .main-sidebar {
-         padding-top: 0px;
-       }
-
     </style>
 </head>
