@@ -132,6 +132,19 @@ class M_basic extends CI_Model {
 		return $query;
 	}
 
+	function getDataPendidikan($column)
+	{
+		$sql = "SELECT district.district, location.total
+		FROM district
+		LEFT JOIN (SELECT district, COUNT(sub_category) AS 'total' FROM location WHERE sub_category = '".$column."' GROUP BY district) location
+		ON district.district = location.district
+		ORDER BY district.id ASC";
+
+		$query = $this->db->query($sql);
+
+		return $query->result_array();
+	}
+
 // INSERT DATA
 
 	function insertData($table, $data)

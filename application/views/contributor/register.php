@@ -27,54 +27,61 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <b>Login</b>Admin
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="#"><b>Contributor</b>GIS</a>
   </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <h2>Sign in</h2>
-    <form action="" method="post" id="login">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" id="userLogin" name="user" placeholder="Username" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" id="passLogin" class="form-control" placeholder="Password" name="pass">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <?php
-        if (@$this->session->flashdata('error') == true) {
-      ?>
-      <small class="text-danger">
-        Wrong Username or Password!!!
-      </small>
 
-      <?php
-        }
-      ?>
-<br/>
+  <div class="register-box-body">
+    <p class="login-box-msg">Register a new contributor</p>
+
+    <form action="../../index.html" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Username">
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Password">
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Confirm Password">
+      </div>
+      <hr/>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="First Name">
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Last Name">
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Address">
+      </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-
-            </label>
+            <!-- <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label> -->
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Login</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
 
+    <a href="<?=base_url()?>contributor" class="text-center">I already be a contributor</a>
+    <br/>
+    <a href="<?=base_url()?>" class="text-center">Not this time</a>
   </div>
-  <!-- /.login-box-body -->
+  <!-- /.form-box -->
 </div>
-<!-- /.login-box -->
+<!-- /.register-box -->
 
 <!-- jQuery 3 -->
 <script src="<?=base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>

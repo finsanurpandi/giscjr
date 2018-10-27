@@ -23,7 +23,7 @@
 <script src="<?=base_url()?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUoWqGCq9EUtLVrgNkZ_Ekx1RZ6jbM8Ms">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUoWqGCq9EUtLVrgNkZ_Ekx1RZ6jbM8Ms&callback=initMap">
 </script>
 <script>
 $.widget.bridge('uibutton', $.ui.button);

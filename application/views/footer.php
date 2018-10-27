@@ -52,10 +52,14 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="<?=base_url()?>assets/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>assets/js/adminlte.min.js"></script>
+<!-- ChartJS 1.0.1 -->
+<!-- <script src="<?=base_url()?>assets/bower_components/chart.js/Chart.min.js"></script> -->
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!-- <script src="dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url()?>assets/js/demo.js"></script>
 <script src="<?=base_url()?>assets/js/custom.js"></script>
+
 </body>
 </html>

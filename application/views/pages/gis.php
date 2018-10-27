@@ -13,8 +13,17 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <address class="address">
-        </address>
+        <!-- <address class="address">
+        </address> -->
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+            <address class="address">
+            </address>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="pull-right" id="showmapModal"></div>
+            </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -22,6 +31,7 @@
     </div>
   </div>
 </div>
+
 
 
 <script>

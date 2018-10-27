@@ -6,6 +6,7 @@ class Home extends CI_Controller {
   function __construct()
   {
     parent::__construct();
+    $this->load->model('m_basic');
   }
 
   function load_view($url, $data=null)
@@ -13,12 +14,21 @@ class Home extends CI_Controller {
     $this->load->view('head');
     $this->load->view('header');
     $this->load->view('sidebar');
-    $this->load->view($url);
+
+    if ($data !== null) {
+        $this->load->view($url, $data);
+    } else {
+        $this->load->view($url);
+    }
+    
     $this->load->view('footer');
   }
 
 	public function index()
 	{
-		$this->load_view('pages/gis');
+    $category = $this->m_basic->getAllData('category')->result_array();
+    $data['category'] = $category;
+
+		$this->load_view('pages/gis', $data);
 	}
 }

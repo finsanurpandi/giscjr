@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="<?=base_url()?>hollow/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Data Master</li>
-        <li class="active">Data Lokasi</li>
+        <li class="active">Data Kontributor</li>
       </ol>
     </section>
 
@@ -21,47 +21,54 @@
       <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Data Lokasi</h3>
+          <h3 class="box-title">Data Kontributor</h3>
         </div>
         <div class="box-body">
 <!-- conternt here -->
 
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalInputLokasi">
-            <i class="fa fa-plus"></i> Tambah
-        </button>
-        <hr/>
         <div class="table-responsive">
         <table id="tbl-data" class="table table-hover">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
                     <th>Address</th>
-                    <th>Kecamatan</th>
-                    <th>Kategori</th>
-                    <th>Sub Kategori</th>
-                    <th>Koordinat</th>
-                    <th>Tipe</th>
-                    <th>Aksi</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
 <?php
     $no = 1;
-    foreach ($location as $key => $value) {
+    foreach ($contributor as $key => $value) {
         echo "<tr>";
         echo "<td>".$no++."</td>";
-        echo "<td><strong>".$value['name']."</strong></td>";
+        echo "<td><strong>".$value['user']."</strong></td>";
+        echo "<td>".$value['nama_depan']." ".$value['nama_belakang']."</td>";
+        echo "<td>".$value['email']."</td>";
         echo "<td>".$value['address']."</td>";
-        echo "<td>".$value['district']."</td>";
-        echo "<td>".$value['category']."</td>";
-        echo "<td>".$value['sub_category']."</td>";
-        echo "<td>".$value['lat']."/".$value['lng']."</td>";
-        echo "<td>".$value['type']."</td>";
+        echo "<td>".$value['image']."</td>";
         echo "<td>";
-        echo "<button class='btn btn-success btn-xs' data-toggle='modal' data-target='#modalEditSubkategori'><i class='fa fa-pencil'></i></button>";
-        echo "&nbsp;";
-        echo "<button class='btn btn-danger btn-xs' data-toggle='modal' data-target='#modalHapusSubkategori'><i class='fa fa-trash'></i></button>";
+        if ($value['status'] == '1') {
+            echo "<div class='label label-success'>Aktif</div>";
+        } else {
+            echo "<div class='label label-danger'>Tidak Aktif</div>";
+        }
+        echo "</td>";
+        echo "<td>";
+        if ($value['status'] == '1') {
+            echo "<button class='btn btn-default btn-xs' disabled><i class='fa fa-check'></i></button>";
+            echo "&nbsp;";
+            echo "<button class='btn btn-danger btn-xs' data-toggle='modal' data-target='#modalHapusSubkategori'><i class='fa fa-remove'></i></button>";
+        } else {
+            echo "<button class='btn btn-success btn-xs' data-toggle='modal' data-target='#modalEditSubkategori'><i class='fa fa-check'></i></button>";
+            echo "&nbsp;";
+            echo "<button class='btn btn-default btn-xs' disabled><i class='fa fa-remove'></i></button>";
+        }
+        
         echo "</td>";
         echo "</tr>";
     }

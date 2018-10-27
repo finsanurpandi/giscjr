@@ -1,4 +1,17 @@
+
 $(document).ready(function(){
+    $.ready.then(function(){
+        $.ajax({
+            url: baseurl+"ajax/cianjur",
+            async: true,
+            dataType: 'json',
+            success: function(data){
+                initMap(data);
+            }
+        });
+        $('#menuCianjur').addClass('active');
+     });
+
     function clearMenu(){
         $('#menuCianjur').removeClass('active');
         $('#pemerintahan').removeClass('active');
@@ -14,6 +27,7 @@ $(document).ready(function(){
         $('#menuPuskesmas').removeClass('active');
         $('#menuPariwisata').removeClass('active');
         $('#menuKuliner').removeClass('active');
+        $('#menuRitel').removeClass('active');
         $('#menuPerbankan').removeClass('active');
         $('#menuUmkm').removeClass('active');
         $('#menuPenginapan').removeClass('active');
@@ -207,6 +221,20 @@ $(document).ready(function(){
         $('#menuKuliner').addClass('active');
     });
 
+    $(document).on('click', '#ritel', function(e){
+        $.ajax({
+            url: baseurl+"ajax/ritel",
+            async: true,
+            dataType: 'json',
+            success: function(data){
+                initMap(data);
+            }
+        });
+
+        clearMenu();
+        $('#menuRitel').addClass('active');
+    });
+
     $(document).on('click', '#perbankan', function(e){
         $.ajax({
             url: baseurl+"ajax/perbankan",
@@ -329,6 +357,9 @@ $(document).ready(function(){
           penginapan: {
             icon: iconBase + 'pal2/icon28.png'
           },
+          ritel: {
+            icon: iconBase + 'pal3/icon18.png'
+          },
           sarana: {
             icon: iconBase + 'pal3/icon48.png'
           }
@@ -374,7 +405,8 @@ $(document).ready(function(){
                     "Latitude: "+feature.lat +"<br>"+
                     "Longitude: "+feature.lng +"<br>"
                 );
-              })
+                showMap(feature);
+            })
           });
 
           bounds.extend(marker.position);
@@ -403,4 +435,26 @@ $(document).ready(function(){
         map.panToBounds(bounds);
       }
 
+      function showMap(detail) {
+        let lat = parseFloat(detail.lat);
+        let lng = parseFloat(detail.lng);
+        
+        let myCenter = new google.maps.LatLng(lat, lng);
+          let mapDiv = document.getElementById('showmapModal');
+          let map = new google.maps.Map(mapDiv, {
+            center: myCenter,
+            zoom: 16,
+            zoomControl: true,
+          });
+    
+          var marker = new google.maps.Marker({
+              position: myCenter,
+          });
+    
+          marker.setMap(map);
+
+          return "Hello";
+    }
+
 });
+

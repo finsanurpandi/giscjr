@@ -44,11 +44,5 @@
         /* height: 680px; */
        }
 
-       #mapModal {
-        width: 300px;
-        height: 200px;
-        /* height: 680px; */
-       }
-
     </style>
 </head>

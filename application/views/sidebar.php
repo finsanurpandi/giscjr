@@ -13,15 +13,12 @@
     </div>
     <!-- search form -->
     <form method="post" class="sidebar-form">
-      <div class="input-group">
-        <select name="kategori" class="form-control">
-          <option>All ...</option>
-          <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
+      <!-- <div class="input-group">
+        <select name="kategori" class="form-control" style="width:230%;">
+          <option>Kategori</option>
+
         </select>
-      </div>
+      </div> -->
       <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search location..." id="searchForm">
         <span class="input-group-btn">
@@ -102,6 +99,7 @@
         </a>
         <ul class="treeview-menu">
           <li id="menuKuliner"><a href="#" id="kuliner"><i class="fa fa-circle-o"></i> Kuliner</a></li>
+          <li id="menuRitel"><a href="#" id="ritel"><i class="fa fa-circle-o"></i> Ritel</a></li>
           <li id="menuPerbankan"><a href="#" id="perbankan"><i class="fa fa-circle-o"></i> Perbankan</a></li>
           <li id="menuUmkm"><a href="#" id="umkm"><i class="fa fa-circle-o"></i> UMKM</a></li>
           <li id="menuPenginapan"><a href="#" id="penginapan"><i class="fa fa-circle-o"></i> Penginapan</a></li>
@@ -110,6 +108,15 @@
       <li id="menuSarana">
         <a href="#" id="sarana">
           <i class="fa fa-building"></i> <span>Sarana Prasarana</span>
+          <!-- <span class="pull-right-container">
+            <small class="label pull-right bg-green">new</small>
+          </span> -->
+        </a>
+      </li>
+
+      <li>
+        <a href="<?=base_url()?>contributor/register">
+          <i class="fa fa-user-circle"></i> <span>Be a contributor?</span>
           <!-- <span class="pull-right-container">
             <small class="label pull-right bg-green">new</small>
           </span> -->

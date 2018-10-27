@@ -95,7 +95,7 @@
         echo "<tr>";
         echo "<td>".$no++."</td>";
         echo "<td>".$value['category']."</td>";
-        echo "<td>".$value['sub-category']."</td>";
+        echo "<td>".$value['sub_category']."</td>";
         echo "<td>";
         echo "<button class='btn btn-success btn-xs' data-toggle='modal' data-target='#modalEditSubkategori'><i class='fa fa-pencil'></i></button>";
         echo "&nbsp;";
